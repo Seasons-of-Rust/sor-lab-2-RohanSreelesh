@@ -1,3 +1,5 @@
+use core::num;
+
 fn main() {
     println!("Welcome to the Rabbit University Safety Testing Suite (RUSTs)");
 
@@ -22,7 +24,7 @@ fn validate_grading_system() {
 
 /// Calculate the grade
 fn calculate_grade(carrots: i32, nuts: i32, seeds: i32) -> i32 {
-    todo!()
+    (carrots + nuts) * (carrots + nuts + seeds)
 }
 
 /// Validate the safety system
@@ -49,7 +51,13 @@ fn calculate_safety_status(
     has_carrot: bool,
     friends_nearby: i32,
 ) -> bool {
-    todo!()
+    if (!wolves_nearby && day_time) || has_carrot {
+        true
+    } else if (!wolves_nearby && day_time) || (friends_nearby > 3) {
+        true
+    } else {
+        false
+    }
 }
 
 /// Validate the simulation
@@ -67,7 +75,17 @@ fn validate_simulation() {
 
 /// Simulate the rabbit population
 fn simulate(starting_rabbits: i128) -> i32 {
-    todo!()
+    let mut numRabbits = starting_rabbits;
+    let mut count: i32 = 0;
+    while numRabbits != 1 {
+        if numRabbits % 2 != 0 {
+            numRabbits = 3 * numRabbits + 1;
+        } else {
+            numRabbits = numRabbits / 2;
+        }
+        count += 1;
+    }
+    count
 }
 
 #[cfg(test)]
