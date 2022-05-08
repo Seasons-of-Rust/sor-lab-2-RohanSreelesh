@@ -1,4 +1,3 @@
-
 fn main() {
     println!("Welcome to the Rabbit University Safety Testing Suite (RUSTs)");
 
@@ -50,7 +49,8 @@ fn calculate_safety_status(
     has_carrot: bool,
     friends_nearby: i32,
 ) -> bool {
-    if (!wolves_nearby && day_time) || has_carrot || (friends_nearby > 3){true} else {false}}
+    (!wolves_nearby && day_time) || has_carrot || (friends_nearby > 3)
+}
 
 /// Validate the simulation
 fn validate_simulation() {
